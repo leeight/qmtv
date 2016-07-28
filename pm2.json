@@ -1,0 +1,16 @@
+{
+  "apps": [{
+    "name": "vod",
+    "script": "www/production.js",
+    "cwd": "/Volumes/HDD/Users/leeight/local/case/inf/bec/git/vod",
+    "exec_mode": "cluster",
+    "instances": 0,
+    "max_memory_restart": "1G",
+    "autorestart": true,
+    "node_args": [],
+    "args": [],
+    "env": {
+      
+    }
+  }]
+}
