@@ -8,7 +8,18 @@ export default class extends Base {
    * @return {Promise} []
    */
   indexAction(){
-    //auto render template file index_index.html
-    return this.display();
+    try {
+      let QmtvService = think.service('qmtv');
+      let instance = new QmtvService();
+
+      this.assign({
+        hello: 'world'
+      });
+      //auto render template file index_index.html
+      return this.display();
+    }
+    catch (err) {
+      return this.fail(err.message);
+    }
   }
 }

@@ -1,0 +1,36 @@
+<!-- target: layout -->
+<!DOCTYPE html>
+<html>
+<head itemscope itemtype="http://schema.org/WebSite">
+    <meta charset="utf-8" />
+    <title itemprop="name">${title}</title>
+    <!-- <link rel="canonical" href="http://bce.baidu.com/" itemprop="url"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <!-- block: viewport -->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0" />
+    <!-- /block -->
+    <!-- if: ${keywords} --><meta name="keywords" content="${keywords}" /><!-- /if -->
+    <!-- if: ${desc} --><meta name="description" content="${desc}" /><!-- /if -->
+    <meta name="renderer" content="webkit">
+    <!-- block: style --><link rel="stylesheet" href="/static/css/index.css" /><!-- /block -->
+    <!-- block: pre_script --><!-- /block -->
+    <!-- block: esl_script -->
+    <script src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/ecom/esl/2-0-6/esl.js"></script>
+    <script>
+    require.config({
+        baseUrl: '/static/js'
+    });
+    </script>
+    <!-- /block -->
+    <!--[if lt IE 9]>
+    <script>for(var i=0,t="abbr, article, aside, audio, canvas, datalist, details, dialog, eventsource, figure, footer, header, hgroup, mark, menu, meter, nav, output, progress, section, time, video, figcaption, main".split(", ");i<t.length;i++){document.createElement(t[i]);}</script>
+    <![endif]-->
+</head>
+
+<body>
+    <header><!-- block: header --><!-- /block --></header>
+    <main><!-- block: body -->Body Content<!-- /block --></main>
+    <!-- block: footer --><!-- /block -->
+</body>
+</html>
+
