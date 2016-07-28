@@ -12,8 +12,12 @@ export default class extends Base {
       let QmtvService = think.service('qmtv');
       let instance = new QmtvService();
 
+      let model = this.model('video');
+      let videos = model.getList();
+
       this.assign({
-        hello: 'world'
+        hello: 'world',
+        videos: videos
       });
       //auto render template file index_index.html
       return this.display();

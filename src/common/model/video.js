@@ -10,10 +10,6 @@ export default class extends think.model.base {
   }
 
   async getList() {
-    let data = await this.field('title, content')
-        .where({id: ['>', 100]})
-        .order('id DESC')
-        .select();
-    return data;
+    return await this.select();
   }
 }
