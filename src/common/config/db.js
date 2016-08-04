@@ -1,4 +1,5 @@
 'use strict';
+
 /**
  * db config
  * @type {Object}
@@ -7,11 +8,11 @@ export default {
   type: 'mysql',
   adapter: {
     mysql: {
-      host: '127.0.0.1',
+      host: 'mysql55.rdsmblk9bzj65s3.rds.bj.baidubce.com',
       port: '',
-      database: 'vod',
-      user: 'root',
-      password: '',
+      database: 'hejianbin',
+      user: 'jianbinhe',
+      password: 'jianbinhe',
       prefix: 'think_',
       encoding: 'utf8'
     },
