@@ -5,6 +5,9 @@
 
 main {
     background: #f6fcff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #333;
+    font-size: 14px;
 }
 
 .content {
@@ -69,8 +72,8 @@ main {
 .layout .ranks {
     width: 288px;
     height: 490px;
-    background: red;
     margin-left: 16px;
+    background: #fff;
 }
 
 .topic .video {
@@ -106,6 +109,7 @@ main {
     font-size: 16px;
     color: #34373b;
     font-weight: normal;
+    margin-bottom: 5px;
 }
 .topic .video figcaption .meta {
     font-size: 12px !important;
@@ -121,16 +125,110 @@ main {
     float: right;
 }
 
+.icon-duration,
+.icon-play,
 .icon-microphone {
     width: 16px;
     height: 16px;
     display: inline-block;
-    background: url(../../img/qmv_icon_1.png) no-repeat center -3px;
+}
+.icon-microphone {
+    background: url(../../img/qmv_icon_1.png) no-repeat -7px -3px;
+}
+.icon-duration {
+    background: url(../../img/qmv_icon_2.png) no-repeat center -3px;
+}
+.icon-play {
+    background: url(../../img/qmv_icon_3.png) no-repeat -2px -3px;
 }
 
-.icon-duration {
-    width: 16px;
-    height: 16px;
+.ranks .tab-body li {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 14px;
+    font-size: 14px;
+}
+.ranks .tab-body li a {
+    color: #d1d2d3;
+}
+.ranks .tab-body li:hover {
+    background: #f5f8fa;
+}
+.ranks .tab-body li:hover a {
+    color: #34373b;
+}
+.ranks .tab-body i {
+    color: #393c40;
+    background-color: #eff2f3;
+    border: 1px solid #d7dee0;
+    width: 18px;
+    height: 18px;
+    line-height: 18px;
+    border-radius: 100%;
     display: inline-block;
-    background: url(../../img/qmv_icon_2.png) no-repeat center -4px;
+    text-align: center;
+    margin-right: 14px;
+}
+.ranks .tab-body span {
+    float: right;
+    color: #d1d2d3;
+}
+.ranks .tab-body i.rank-0,
+.ranks .tab-body i.rank-1,
+.ranks .tab-body i.rank-2 {
+    width: 24px;
+    height: 24px;
+    border: none;
+    text-indent: -999px;
+    position: relative;
+    left: -3px;
+    top: 5px;
+    overflow: hidden;
+    margin-right: 11px;
+}
+.ranks .tab-body i.rank-0 {
+    background: url(../../img/rank-0.png) no-repeat;
+}
+.ranks .tab-body i.rank-1 {
+    background: url(../../img/rank-1.png) no-repeat;
+}
+.ranks .tab-body i.rank-2 {
+    background: url(../../img/rank-2.png) no-repeat;
+}
+
+ul.tab {
+    overflow: hidden;
+    border-bottom: 1px solid #f5f8fa;
+    margin-bottom: 14px;
+}
+ul.tab li {
+    float: left;
+    width: 144px;
+    height: 35px;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 15px;
+    position: relative;
+}
+ul.tab li span {
+    font-size: 14px;
+    opacity: 0.3;
+    color: #34373b;
+}
+ul.tab li:hover span {
+    opacity: 1;
+}
+ul.tab li.active:after {
+    content: "";
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    border-bottom: 2px solid #ff5253;
+    position: absolute;
+    bottom: 0;
+    left: 22px;
+}
+ul.tab li.active span {
+    opacity: 1;
+    color: #ff5253;
 }
