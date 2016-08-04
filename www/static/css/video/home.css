@@ -1,0 +1,136 @@
+/**
+ * @file css/video/home.css
+ * @author leeight
+ */
+
+main {
+    background: #f6fcff;
+}
+
+.content {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+.topic .header {
+    overflow: hidden;
+    padding: 15px 0;
+}
+
+.topic .header h2,
+.topic .header .anchors li {
+    float: left;
+}
+
+.topic .header h2 {
+    font-size:26px;
+    color:#fd472e;
+    line-height: 30px;
+    width: 200px;
+}
+.topic .header h2 img {
+    margin-right: 10px;
+}
+
+.topic .header .anchors {
+    margin-top: 5px;
+    font-size:14px;
+}
+.topic .header .anchors a {
+    color:rgba(52,54,58,0.50);
+}
+.topic .header .anchors li {
+    margin-right: 20px;
+    border:1px solid #f5f8fa;
+    border-radius:100px;
+    height: 22px;
+    padding: 0 10px;
+}
+.topic .header .anchors li:hover {
+    background: #fd472e;
+}
+.topic .header .anchors li:hover a {
+    color: white;
+}
+
+.layout {
+    overflow: hidden;
+}
+.layout .videos,
+.layout .ranks {
+    float: left;
+}
+
+.layout .videos {
+    width: 912px;
+    margin-right: -16px;
+}
+
+.layout .ranks {
+    width: 288px;
+    height: 490px;
+    background: red;
+    margin-left: 16px;
+}
+
+.topic .video {
+    width: 288px;
+    float: left;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+.topic .video figure {
+    margin: 0;
+}
+.topic .video .preview {
+    cursor: pointer;
+    position: relative;
+}
+.topic .video .preview .hover {
+    display: none;
+}
+.topic .video .preview:hover .hover {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.topic .video figcaption {
+    background: #fff;
+    height: 46px;
+    padding: 14px;
+}
+.topic .video figcaption h3 {
+    font-size: 16px;
+    color: #34373b;
+    font-weight: normal;
+}
+.topic .video figcaption .meta {
+    font-size: 12px !important;
+    opacity: 0.3;
+    color: #34373b;
+    letter-spacing: 0px;
+}
+.topic .video figcaption .meta span i {
+    position: relative;
+    top: 3px;
+}
+.topic .video figcaption .meta .duration {
+    float: right;
+}
+
+.icon-microphone {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url(../../img/qmv_icon_1.png) no-repeat center -3px;
+}
+
+.icon-duration {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    background: url(../../img/qmv_icon_2.png) no-repeat center -4px;
+}

@@ -1,32 +1,61 @@
 <!-- target: page(master=layout) -->
 
+<!-- block: style -->
+<link rel="stylesheet" href="/static/css/video/home.css" />
+<!-- /block -->
+
 <!-- block: body -->
 <div class="content">
-  <div class="list">
-    <div class="item">
-      <div class="step">0</div>
-      <h2>Videos（数据库的数据）</h2>
-      <p><ol>
-      <!-- for: ${videos} as ${video} -->
-      <li>${video.title} (${video.play_count})</li>
+  <!-- for: ${topics} as ${topic} -->
+  <!-- use: home_topic(topic=${topic})-->
+  <!-- /for -->
+</div>
+<!-- /block -->
+
+<!-- target: home_topic -->
+<div class="topic">
+  <div class="header">
+    <h2><img src="${topic.icon_url}" />${topic.name}</h2>
+    <ul class="anchors">
+    <!-- for: ${topic.anchors} as ${anchor} -->
+    <li><a href="/video/anchor/${anchor.uid}">${anchor.name}</a></li>
+    <!-- /for -->
+    </ul>
+  </div>
+  <div class="layout">
+    <div class="videos">
+      <!-- for: ${topic.videos} as ${video} -->
+      <!-- use: home_topic_video(video=${video})-->
       <!-- /for -->
-      </ol></p>
     </div>
-    <div class="item">
-      <div class="step">1</div>
-      <h2>Generate Files</h2>
-      <p>Run <code>thinkjs</code> command to create module, controler, model, service and so on. visit <a href="https://thinkjs.org/doc/thinkjs_command.html">https://thinkjs.org/doc/thinkjs_command.html</a> to view more infomation.</p>
-    </div>
-    <div class="item">
-      <div class="step">2</div>
-      <h2>Documatation</h2>
-      <p>ThinkJS has html and pdf documents. visit <a href="https://thinkjs.org/doc.html">https://thinkjs.org/doc.html</a></p>
-    </div>
-    <div class="item">
-      <div class="step">3</div>
-      <h2>WebSocket</h2>
-      <p>ThinkJS support <code>socket.io</code> and <code>sockjs</code> WebSocket client and server node. visit <a href="https://thinkjs.org/doc/adapter_websocket.html">https://thinkjs.org/doc/adapter_websocket.html</a></p>
+    <div class="ranks">
+      排行榜
     </div>
   </div>
 </div>
-<!-- /block -->
+
+<!-- target: home_topic_video -->
+<div class="video">
+  <figure>
+    <a class="preview" href="/video/${video.id}" title="播放 ${video.name}">
+      <!-- if: ${video.thumbnail_url} -->
+      <img width="288" height="163" src="${video.thumbnail_url}" />
+      <!-- else -->
+      <img width="288" height="163" src="http://dummyimage.com/288x163" />
+      <!-- /if -->
+      <img class="hover" width="288" height="163" src="/static/img/hover.png" />
+    </a>
+    <figcaption>
+      <h3>${video.name}</h3>
+      <div class="meta">
+        <span class="anchor-name">
+          <i class="icon-microphone"></i>${video.anchor.name}
+        </span>
+
+        <span class="duration">
+          <i class="icon-duration"></i>13:09
+        </span>
+      </div>
+    </figcaption>
+  </figure>
+</div>
