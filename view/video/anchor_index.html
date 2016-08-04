@@ -37,8 +37,9 @@
     <p class="empty">暂无数据.</p>
     <!-- /if -->
   </div>
-  <div class="pager">
-  </div>
+  <!-- if: ${totalCount} > ${pageSize} -->
+  <div class="pager"></div>
+  <!-- /if -->
 </div>
 <script>
 require(['video/anchor'], function (app) {
