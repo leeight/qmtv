@@ -1,0 +1,48 @@
+<!-- target: page(master=layout) -->
+
+<!-- block: biz_style -->
+<link rel="stylesheet" href="/static/css/video/anchor.css" />
+<!-- /block -->
+
+<!-- block: body -->
+<div class="content">
+  <div class="anchor">
+    <div class="profile">
+      <div class="avatar">
+        <img width="80" height="80" src="${anchor.avatar}" />
+      </div>
+      <div class="info">
+        <h3>${anchor.name}</h3>
+        <p>${anchor.description}</p>
+      </div>
+    </div>
+    <div class="navs">
+      <div class="total-count">
+        视频 <strong>${totalCount}</strong>
+      </div>
+      <!-- if: ${anchor.videos.length} -->
+      <ul class="tab">
+        <li class="active"><span>最新发布</span></li>
+        <li><span>最多播放</span></li>
+      </ul>
+      <!-- /if -->
+    </div>
+  </div>
+  <div class="videos">
+    <!-- if: ${anchor.videos.length} -->
+    <!-- for: ${anchor.videos} as ${video} -->
+    <!-- use: home_topic_video(video=${video})-->
+    <!-- /for -->
+    <!-- else -->
+    <p class="empty">暂无数据.</p>
+    <!-- /if -->
+  </div>
+  <div class="pager">
+  </div>
+</div>
+<script>
+require(['video/anchor'], function (app) {
+  app.start(${page}, ${pageSize}, ${totalCount});
+});
+</script>
+<!-- /block -->

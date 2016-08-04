@@ -1,6 +1,6 @@
 <!-- target: page(master=layout) -->
 
-<!-- block: style -->
+<!-- block: biz_style -->
 <link rel="stylesheet" href="/static/css/video/home.css" />
 <!-- /block -->
 
@@ -66,32 +66,4 @@
       </div>
     </div>
   </div>
-</div>
-
-<!-- target: home_topic_video -->
-<div class="video">
-  <figure>
-    <a class="preview" href="/video/${video.id}" title="播放 ${video.name}">
-      <!-- if: ${video.thumbnail_url} -->
-      <img width="288" height="163" src="${video.thumbnail_url}" />
-      <!-- else -->
-      <img width="288" height="163" src="http://dummyimage.com/288x163" />
-      <!-- /if -->
-      <img class="hover" width="288" height="163" src="/static/img/hover.png" />
-    </a>
-    <figcaption>
-      <h3>${video.name}</h3>
-      <div class="meta">
-        <span class="anchor-name">
-          <a href="/video/anchor/${video.anchor.uid}"><i class="icon-microphone"></i>${video.anchor.name}</a>
-        </span>
-        <span class="play-count">
-          <i class="icon-play"></i>${video.real_play_count}
-        </span>
-        <span class="duration">
-          <i class="icon-duration"></i>13:09
-        </span>
-      </div>
-    </figcaption>
-  </figure>
 </div>

@@ -1,0 +1,120 @@
+/**
+ * @file css/base.css
+ * @author leeight
+ */
+
+main {
+    background: #f6fcff;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: #333;
+    font-size: 14px;
+}
+
+/* video */
+.videos {
+    overflow: hidden;
+}
+.video {
+    width: 288px;
+    float: left;
+    margin-right: 16px;
+    margin-bottom: 16px;
+}
+.video figure {
+    margin: 0;
+}
+.video .preview {
+    cursor: pointer;
+    position: relative;
+}
+.video .preview .hover {
+    display: none;
+}
+.video .preview:hover .hover {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+.video figcaption {
+    background: #fff;
+    height: 46px;
+    padding: 14px;
+}
+.video figcaption h3 {
+    font-size: 16px;
+    color: #34373b;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+.video figcaption .meta {
+    font-size: 12px !important;
+    opacity: 0.3;
+    color: #34373b;
+    letter-spacing: 0px;
+}
+.video figcaption .meta span i {
+    position: relative;
+    top: 3px;
+}
+.video figcaption .meta .duration {
+    float: right;
+}
+
+
+/* icon */
+.icon-duration,
+.icon-play,
+.icon-microphone {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+}
+.icon-microphone {
+    background: url(../img/qmv_icon_1.png) no-repeat -7px -3px;
+}
+.icon-duration {
+    background: url(../img/qmv_icon_2.png) no-repeat center -3px;
+}
+.icon-play {
+    background: url(../img/qmv_icon_3.png) no-repeat -2px -3px;
+}
+
+/* tab */
+ul.tab {
+    overflow: hidden;
+    border-bottom: 1px solid #f5f8fa;
+    margin-bottom: 14px;
+}
+ul.tab li {
+    float: left;
+    width: 144px;
+    height: 35px;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 15px;
+    position: relative;
+}
+ul.tab li span {
+    font-size: 14px;
+    opacity: 0.3;
+    color: #34373b;
+}
+ul.tab li:hover span {
+    opacity: 1;
+}
+ul.tab li.active:after {
+    content: "";
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    border-bottom: 2px solid #ff5253;
+    position: absolute;
+    bottom: 0;
+    left: 22px;
+}
+ul.tab li.active span {
+    opacity: 1;
+    color: #ff5253;
+}

@@ -1,0 +1,107 @@
+/**
+ * @file css/video/anchro.css
+ * @author leeight
+ */
+
+.content {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.videos {
+    width: 1216px;
+    margin-right: -16px;
+    margin-top: 20px;
+}
+
+.anchor {
+    background: #ffffff;
+    border: 1px solid #e6edf0;
+    border-radius: 4px;
+}
+.anchor .profile {
+    overflow: hidden;
+    padding: 20px;
+    border-bottom: 1px solid #e6edf0;
+}
+
+.profile .avatar,
+.profile .info {
+    float: left;
+}
+.profile .avatar {
+    margin-right: 20px;
+}
+.profile .avatar img {
+    border-radius: 5px;
+}
+.profile .info {
+    padding: 20px 0 0 0;
+}
+.profile .info p {
+    color: #d1d2d3;
+    font-size: 12px;
+    padding: 15px 0 0 0;
+}
+.profile .info h3 {
+    font-size: 20px;
+}
+
+.navs {
+    text-align: center;
+    position: relative;
+    height: 53px;
+}
+.total-count {
+    position: absolute;
+    left: 20px;
+    top: 18px;
+    font-size: 16px;
+}
+.total-count strong {
+    background: #f5f8fa;
+    border-radius: 100px;
+    height: 20px;
+    padding: 4px 20px;
+    font-size: 12px;
+    font-weight: normal;
+    margin-left: 10px;
+}
+p.empty {
+    margin-bottom: 20px;
+}
+
+.pager {
+    text-align: center;
+    margin: 25px 0;
+    padding-bottom: 35px;
+}
+.pager ul {
+    display: inline-block;
+    margin: 0 auto;
+}
+.pager ul li {
+    display: inline-block;
+    background: #ffffff;
+    border: 1px solid #e6edf0;
+    box-shadow: 0px 2px 8px 0px rgba(53,169,246,0.06);
+    border-radius: 2px;
+    margin-right: 5px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+}
+.pager ul li.item-current {
+    background: transparent;
+}
+
+/* patch */
+ul.tab {
+    margin-bottom: 0;
+    border-bottom: none;
+    display: inline-block;
+    margin: 0 auto;
+    position: relative;
+    bottom: -3px;
+}

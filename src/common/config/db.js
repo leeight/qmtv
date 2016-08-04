@@ -6,6 +6,7 @@
  */
 export default {
   type: 'mysql',
+  connectionLimit: 10,
   adapter: {
     mysql: {
       host: 'mysql55.rdsmblk9bzj65s3.rds.bj.baidubce.com',
@@ -14,7 +15,8 @@ export default {
       user: 'jianbinhe',
       password: 'jianbinhe',
       prefix: 'think_',
-      encoding: 'utf8'
+      encoding: 'utf8',
+      nums_per_page: 16
     },
     mongo: {
 

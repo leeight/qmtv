@@ -8,9 +8,7 @@ export default class extends Base {
    * @return {Promise} []
    */
   indexAction(){
-    // this.fail(1000, 'xxx');
-    this.json({a: 10});
     //auto render template file index_index.html
-    // return this.display();
+    return this.display();
   }
 }

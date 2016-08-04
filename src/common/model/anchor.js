@@ -2,9 +2,26 @@
 /**
  * model
  */
-export default class extends think.model.base {
+export default class extends think.model.relation {
+    init(...args) {
+        super.init(...args);
+        this.relation = {
+            videos: {
+                type: think.model.HAS_MANY,
+                model: 'video',
+                key: 'uid',
+                fKey: 'anchor',
+                limit: 16
+            }
+        }
+    }
+
+    async list(page) {
+        return this.setRelation('videos', {page}).find();
+    }
+
     async top(n = 10, uids) {
-        let query = this.cache(60).limit(n);
+        let query = this.limit(n);
         
         if (uids) {
             if (uids.length <= 0) {

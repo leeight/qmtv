@@ -13,7 +13,8 @@
     <!-- if: ${desc} --><meta name="description" content="${desc}" /><!-- /if -->
     <meta name="renderer" content="webkit">
     <link rel="stylesheet" href="http://www.quanmin.tv/static/styles/index.css?v=30b2cb473c" />
-    <!-- block: style --><link rel="stylesheet" href="/static/css/index.css" /><!-- /block -->
+    <!-- block: style --><link rel="stylesheet" href="/static/css/base.css" /><!-- /block -->
+    <!-- block: biz_style --><!-- /block -->
     <!-- block: pre_script --><!-- /block -->
     <!-- block: esl_script -->
     <script src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/ecom/esl/2-0-6/esl.js"></script>
@@ -156,4 +157,35 @@
     </div>
 
 </div>
+</div>
+
+
+<!-- target: home_topic_video -->
+<div class="video">
+  <figure>
+    <a class="preview" href="/video/${video.id}" title="播放 ${video.name}">
+      <!-- if: ${video.thumbnail_url} -->
+      <img width="288" height="163" src="${video.thumbnail_url}" />
+      <!-- else -->
+      <img width="288" height="163" src="http://dummyimage.com/288x163" />
+      <!-- /if -->
+      <img class="hover" width="288" height="163" src="/static/img/hover.png" />
+    </a>
+    <figcaption>
+      <h3>${video.name}</h3>
+      <div class="meta">
+        <!-- if: ${video.anchor.uid} -->
+        <span class="anchor-name">
+          <a href="/video/anchor/${video.anchor.uid}"><i class="icon-microphone"></i>${video.anchor.name}</a>
+        </span>
+        <!-- /if -->
+        <span class="play-count">
+          <i class="icon-play"></i>${video.real_play_count}
+        </span>
+        <span class="duration">
+          <i class="icon-duration"></i>13:09
+        </span>
+      </div>
+    </figcaption>
+  </figure>
 </div>
