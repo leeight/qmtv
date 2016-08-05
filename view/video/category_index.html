@@ -1,0 +1,49 @@
+<!-- target: page(master=layout) -->
+
+<!-- block: biz_style -->
+<link rel="stylesheet" href="/static/css/video/category.css" />
+<!-- /block -->
+
+<!-- block: body -->
+<div class="content">
+  <div class="categories">
+    <table>
+      <tr>
+        <th class="all"><a href="/video/category/all">全部</a></th>
+        <td>
+            <!-- for: ${categories} as ${category} -->
+            <a href="/video/category/${category.name}">${category.name}</a>
+            <!-- /for -->
+        </td>
+      </tr>
+    </table>
+    <div class="search-nav">
+      <div>筛选结果</div>
+      <!-- if: ${videos.length} -->
+      <ul class="tab">
+        <li class="active"><span>最新发布</span></li>
+        <li><span>最多播放</span></li>
+      </ul>
+      <!-- /if -->
+    </div>
+  </div>
+  <div class="videos">
+    <!-- if: ${videos.length} -->
+    <!-- for: ${videos} as ${video} -->
+    <!-- use: home_topic_video(video=${video})-->
+    <!-- /for -->
+    <!-- else -->
+    <p class="empty">暂无数据.</p>
+    <!-- /if -->
+  </div>
+  <!-- if: ${totalCount} > ${pageSize} -->
+  <div class="pager"></div>
+  <!-- /if -->
+</div>
+
+<script>
+require(['video/search'], function (app) {
+  app.start(${page}, ${pageSize}, ${totalCount});
+});
+</script>
+<!-- /block -->

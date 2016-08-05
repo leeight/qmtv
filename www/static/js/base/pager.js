@@ -48,7 +48,7 @@ define(function (require) {
     }
 
     function getUrlByTemplate(num) {
-        var search = location.search;
+        var search = location.search.replace(/[\?&]page=\d+/g, '');
         if (!search) {
             return '?page=' + num;
         }
