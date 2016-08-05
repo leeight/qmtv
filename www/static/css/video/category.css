@@ -3,18 +3,6 @@
  * @author leeight
  */
 
-.content {
-    width: 1200px;
-    margin: 0 auto;
-    padding-top: 30px;
-}
-
-.videos {
-    width: 1216px;
-    margin-right: -16px;
-    margin-top: 20px;
-}
-
 .categories {
     background: #ffffff;
     border: 1px solid #e6edf0;
@@ -43,6 +31,13 @@
     color: #34373b;
     margin-right: 10px;
 }
+.categories td a.active {
+    background: #fd472e;
+    border-radius: 100px;
+    opacity: 1;
+    color: #fff;
+    padding: 3px 10px;
+}
 .categories .search-nav {
     text-align: center;
     position: relative;
@@ -56,6 +51,16 @@
     left: 0;
     font-size: 16px;
     color:#333333;
+}
+.categories .search-nav strong {
+    opacity: 0.5;
+    color: #34373b;
+    border-radius: 100px;
+    padding: 3px 10px;
+    background: #f5f8fa;
+    font-weight: normal;
+    font-size: 12px;
+    margin-left: 5px;
 }
 
 /* patch */

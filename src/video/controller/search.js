@@ -15,7 +15,7 @@ export default class extends Base {
     async indexAction(){
         let word = this.get('word') || '';
         let page = parseInt(this.get('page'), 10) || 1;
-        let pageSize = 16;
+        let pageSize = 20;
         let totalCount = 0;
         let videos = [];
         

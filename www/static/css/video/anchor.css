@@ -3,18 +3,6 @@
  * @author leeight
  */
 
-.content {
-    width: 1200px;
-    margin: 0 auto;
-    padding-top: 30px;
-}
-
-.videos {
-    width: 1216px;
-    margin-right: -16px;
-    margin-top: 20px;
-}
-
 .anchor {
     background: #ffffff;
     border: 1px solid #e6edf0;
@@ -38,6 +26,19 @@
 }
 .profile .info {
     padding: 20px 0 0 0;
+}
+.profile .info h3 strong {
+    background: #00acff;
+    border-radius: 100px;
+    padding: 5px 12px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 14px;
+    margin-left: 10px;
+}
+.profile .info h3 .icon-tv {
+    position: relative;
+    top: 2px;
 }
 .profile .info p {
     color: #d1d2d3;

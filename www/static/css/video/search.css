@@ -3,18 +3,6 @@
  * @author leeight
  */
 
-.content {
-    width: 1200px;
-    margin: 0 auto;
-    padding-top: 30px;
-}
-
-.videos {
-    width: 1216px;
-    margin-right: -16px;
-    margin-top: 20px;
-}
-
 .search-nav {
     background: #ffffff;
     border: 1px solid #e6edf0;

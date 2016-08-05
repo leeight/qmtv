@@ -161,6 +161,7 @@
 
 
 <!-- target: home_topic_video -->
+<!-- var: play_count = ${video.real_play_count} + ${video.base_play_count};-->
 <div class="video">
   <figure>
     <a class="preview" href="/video/${video.id}" title="播放 ${video.name}">
@@ -180,7 +181,7 @@
         </span>
         <!-- /if -->
         <span class="play-count">
-          <i class="icon-play"></i>${video.real_play_count}
+          <i class="icon-play"></i>${play_count}
         </span>
         <span class="duration">
           <i class="icon-duration"></i>13:09

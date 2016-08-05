@@ -16,8 +16,8 @@ export default class extends think.model.relation {
         }
     }
 
-    async list(page) {
-        return this.setRelation('videos', {page}).find();
+    async list(page, orderByValue) {
+        return this.setRelation('videos', {page, order: orderByValue}).find();
     }
 
     async top(n = 10, uids) {

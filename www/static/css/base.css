@@ -10,6 +10,30 @@ main {
     font-size: 14px;
 }
 
+.content {
+    width: 1200px;
+    /*max-width: 1504px;*/
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.videos {
+    width: 1216px;
+    /*max-width: 1520px;*/
+    margin-right: -16px;
+    margin-top: 20px;
+}
+
+@media all and (min-width: 1300px) {
+    .content {
+        width: 1504px;
+    }
+
+    .videos {
+        width: 1520px;
+    }
+}
+
 /* video */
 .videos {
     overflow: hidden;
@@ -66,10 +90,14 @@ main {
 /* icon */
 .icon-duration,
 .icon-play,
+.icon-tv,
 .icon-microphone {
     width: 16px;
     height: 16px;
     display: inline-block;
+}
+.icon-tv {
+    background: url(../img/qmv_icon_tv.png) no-repeat 1px 1px;  
 }
 .icon-microphone {
     background: url(../img/qmv_icon_1.png) no-repeat -7px -3px;
@@ -101,6 +129,7 @@ ul.tab li span {
     opacity: 0.3;
     color: #34373b;
 }
+ul.tab li:hover a,
 ul.tab li:hover span {
     opacity: 1;
 }
@@ -114,6 +143,7 @@ ul.tab li.active:after {
     bottom: 0;
     left: 22px;
 }
+ul.tab li.active a,
 ul.tab li.active span {
     opacity: 1;
     color: #ff5253;

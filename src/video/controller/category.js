@@ -14,8 +14,12 @@ export default class extends Base {
      */
     async indexAction(){
         let name = this.get('category') || '';
+        let orderBy = this.get('orderBy') || 'create_time';
+        let orderByValue = orderBy == 'create_time'
+            ? 'create_time DESC'
+            : 'base_play_count + real_play_count DESC';
         let page = parseInt(this.get('page'), 10) || 1;
-        let pageSize = 16;
+        let pageSize = 20;
         let totalCount = 0;
         let videos = [];
         let categories = await this.model('topic').select();
@@ -24,7 +28,7 @@ export default class extends Base {
         // 定位当前的分类
         if (name === 'all') {
             totalCount = await this.model('video').count();
-            videos = await this.model('video').page(page).select();
+            videos = await this.model('video').order(orderByValue).page(page).select();
         }
         else {
             for (let i = 0; i < categories.length; i++) {
@@ -40,6 +44,7 @@ export default class extends Base {
                     .count();
                 videos = await this.model('video')
                     .where({topic: category.id})
+                    .order(orderByValue)
                     .page(page)
                     .select();
             }
@@ -47,7 +52,7 @@ export default class extends Base {
 
         this.assign({
             videos, totalCount, page, pageSize, category,
-            categories
+            categories, orderBy
         })
         
         return this.display();

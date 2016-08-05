@@ -12,7 +12,10 @@
         <img width="80" height="80" src="${anchor.avatar}" />
       </div>
       <div class="info">
-        <h3>${anchor.name}</h3>
+        <h3>
+          ${anchor.name}
+          <strong><i class="icon-tv"></i>正在直播</strong>
+        </h3>
         <p>${anchor.description}</p>
       </div>
     </div>
@@ -22,8 +25,8 @@
       </div>
       <!-- if: ${anchor.videos.length} -->
       <ul class="tab">
-        <li class="active"><span>最新发布</span></li>
-        <li><span>最多播放</span></li>
+        <li<!-- if: ${orderBy} == "create_time" --> class="active"<!-- /if -->><span><a href="?orderBy=create_time">最新发布</a></span></li>
+        <li<!-- if: ${orderBy} == "play_count" --> class="active"<!-- /if -->><span><a href="?orderBy=play_count">最多播放</a></span></li>
       </ul>
       <!-- /if -->
     </div>

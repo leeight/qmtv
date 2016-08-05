@@ -16,7 +16,7 @@ export default {
       password: 'jianbinhe',
       prefix: 'think_',
       encoding: 'utf8',
-      nums_per_page: 16
+      nums_per_page: 20
     },
     mongo: {
 
