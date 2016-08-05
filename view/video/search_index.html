@@ -1,0 +1,36 @@
+<!-- target: page(master=layout) -->
+
+<!-- block: biz_style -->
+<link rel="stylesheet" href="/static/css/video/search.css" />
+<!-- /block -->
+
+<!-- block: body -->
+<div class="content">
+  <div class="search-nav">
+      <div class="query">搜索“${word}”的结果</div>
+      <ul class="tab">
+        <li><span>直播</span><strong>0</strong></li>
+        <li><span>主播</span><strong>0</strong></li>
+        <li class="active"><span>视频</span><strong>${totalCount}</strong></li>
+      </ul>
+  </div>
+  <div class="videos">
+    <!-- if: ${videos.length} -->
+    <!-- for: ${videos} as ${video} -->
+    <!-- use: home_topic_video(video=${video})-->
+    <!-- /for -->
+    <!-- else -->
+    <p class="empty">暂无数据.</p>
+    <!-- /if -->
+  </div>
+  <!-- if: ${totalCount} > ${pageSize} -->
+  <div class="pager"></div>
+  <!-- /if -->
+</div>
+
+<script>
+require(['video/search'], function (app) {
+  app.start(${page}, ${pageSize}, ${totalCount});
+});
+</script>
+<!-- /block -->

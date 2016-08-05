@@ -1,5 +1,5 @@
 /**
- * @file video/anchor.js
+ * @file video/search.js
  * @author leeight
  */
 

@@ -11,7 +11,8 @@ export default class extends think.model.relation {
         //     anchor: {
         //         type: think.model.BELONG_TO,
         //         key: 'anchor',
-        //         fKey: 'uid'
+        //         fKey: 'uid',
+        //         relation: false
         //     }
         // }
     }
