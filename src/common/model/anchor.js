@@ -5,6 +5,7 @@
 export default class extends think.model.relation {
     init(...args) {
         super.init(...args);
+        this.pk = 'uid';
         this.relation = {
             videos: {
                 type: think.model.HAS_MANY,

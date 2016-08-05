@@ -31,7 +31,7 @@ export default class extends think.model.relation {
             if (vids.length <= 0) {
                 return [];
             }
-            
+
             query.where({id: vids});
         }
 
@@ -45,7 +45,6 @@ export default class extends think.model.relation {
                 let video = videos[i];
                 let uid = video.anchor;
                 video.anchor = await this.model('anchor')
-                    .cache(60)
                     .where({uid})
                     .find();
             }

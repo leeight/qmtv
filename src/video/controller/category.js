@@ -24,7 +24,7 @@ export default class extends Base {
         let videos = [];
         let categories = await this.model('topic').select();
         let category = null;
-        
+
         // 定位当前的分类
         if (name === 'all') {
             totalCount = await this.model('video').count();
@@ -37,12 +37,13 @@ export default class extends Base {
                     break;
                 }
             }
-            
+
             if (category) {
                 totalCount = await this.model('video')
                     .where({topic: category.id})
                     .count();
                 videos = await this.model('video')
+                    .setRelation('anchor')
                     .where({topic: category.id})
                     .order(orderByValue)
                     .page(page)

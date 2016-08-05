@@ -7,8 +7,13 @@ export default class extends Base {
    * index action
    * @return {Promise} []
    */
-  indexAction(){
+  async indexAction(){
+    let video = await this.model('video')
+      .setRelation('anchor')
+      .where({id: [1,2]})
+      .select();
+    return this.json(video);
     //auto render template file index_index.html
-    return this.display();
+    // return this.display();
   }
 }
