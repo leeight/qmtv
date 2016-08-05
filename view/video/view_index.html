@@ -1,0 +1,75 @@
+<!-- target: page(master=layout) -->
+
+<!-- block: biz_style -->
+<link rel="stylesheet" href="/static/css/video/view.css" />
+<!-- /block -->
+
+<!-- block: body -->
+<div class="view-container">
+    <div class="content">
+        <div class="header">
+            <i class="icon icon-view-header"></i>
+            <span class="topic">${video.topic.name}</span>
+            <span class="split">/</span>
+            <span class="anchor-name"><a href="/video/anchor/${video.anchor.uid}">${video.anchor.name}</a></span>
+            <span class="split">/</span>
+            <span class="video-name">${video.name}</span>
+        </div>
+        <div class="video-container">
+            <div id="playerContainer" class="cyberplayer"></div>
+        </div>
+        <div class="video-info">
+            <div class="title">
+                ${video.name}
+            </div>
+            <div class="play-count">
+                <i class="icon icon-play"></i>
+                <span class="real-play-count">${video.real_play_count}</span>次播放
+            </div>
+            <div class="anchor-info">
+                <div class="avator">
+                    <a href="/video/anchor/${video.anchor.uid}">
+                        <img src="${video.anchor.avatar}" width="64" height="64"/>
+                    </a>
+                </div>
+                <div class="anchor-introduction">
+                    <div class="name">
+                        <a href="/video/anchor/${video.anchor.uid}">${video.anchor.name}</a>
+                        <!-- if: ${video.anchor.description} -->
+                        <span class="anchor-description">${video.anchor.description}</span>
+                        <!-- /if -->
+                    </div>
+                    <div class="status">
+                        <!-- if: ${video.anchor.real_subscription} -->
+                        <div class="fans">
+                            <label>订阅</label>
+                            <span class="real-subscription">${video.anchor.real_subscription}</span>
+                        </div>
+                        <!-- /if -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="recommend-videos anchor-videos">
+    <h2><i class="icon icon-new"></i>最新视频</h2>
+    <div class="videos">
+    <!-- for: ${anchor.videos} as ${video} -->
+    <!-- use: home_topic_video(video=${video})-->
+    <!-- /for -->
+  </div>
+</div>
+
+<!-- if: ${topicVideos.length} > 0 -->
+<div class="recommend-videos topic-videos">
+    <h2><i class="icon icon-recommend"></i>推荐视频</h2>
+    <!-- for: ${topicVideos} as ${video} -->
+    <!-- use: home_topic_video(video=${video})-->
+    <!-- /for -->
+</div>
+<!-- /if -->
+
+<script>require(['video/view'], function (app) { app.start('${video.play_url}', '${video.thumbnail_url}'); });</script>
+<!-- /block -->

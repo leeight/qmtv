@@ -20,6 +20,11 @@ export default {
     },
     mongo: {
 
+    },
+    cache: {
+      on: true, // 数据库缓存配置的总开关，关闭后即使程序中调用 cache 方法也无效
+      type: '', // 默认为内存缓存
+      timeout: 3600 // 默认缓存时间
     }
   }
 };

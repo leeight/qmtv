@@ -7,14 +7,21 @@
 export default class extends think.model.relation {
     init(...args) {
         super.init(...args);
-        // this.relation = {
-        //     anchor: {
-        //         type: think.model.BELONG_TO,
-        //         key: 'anchor',
-        //         fKey: 'uid',
-        //         relation: false
-        //     }
-        // }
+
+        this.relation = {
+            anchor: {
+                type: think.model.BELONG_TO,
+                key: 'anchor',
+                fKey: 'uid',
+                relation: false
+            },
+            topic: {
+                type: think.model.BELONG_TO,
+                key: 'topic',
+                fKey: 'id',
+                relation: false
+            }
+        };
     }
 
     async top(n = 10, vids, f = true) {
@@ -28,7 +35,7 @@ export default class extends think.model.relation {
             query.where({id: vids});
         }
 
-        let videos = await query.select();
+        let videos = await query.setRelation(false).select();
 
         // TODO(leeight) 这样子的查询可能存在性能问题
         // this.relation 的配置貌似没有效果，为啥呢？
@@ -45,5 +52,11 @@ export default class extends think.model.relation {
         }
 
         return videos;
+    }
+
+    // 根据视频id查询单个视频(包括主播和分类信息)
+    async getVideoById(vid) {
+        // 为了性能先sql
+        return await this.where({id: vid}).find();
     }
 }

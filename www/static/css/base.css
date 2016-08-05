@@ -3,9 +3,13 @@
  * @author leeight
  */
 
+body {
+    background: #f6fcff;
+}
+
 main {
     background: #f6fcff;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-family: "Microsoft YaHei", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     color: #333;
     font-size: 14px;
 }
@@ -50,6 +54,7 @@ main {
 .video .preview {
     cursor: pointer;
     position: relative;
+    display: inline-block;
 }
 .video .preview .hover {
     display: none;
@@ -88,6 +93,12 @@ main {
 
 
 /* icon */
+/* icon */
+.icon {
+    display: inline-block;
+    vertical-align: middle;
+    opacity: 1;
+}
 .icon-duration,
 .icon-play,
 .icon-tv,
@@ -107,6 +118,16 @@ main {
 }
 .icon-play {
     background: url(../img/qmv_icon_3.png) no-repeat -2px -3px;
+}
+.icon-recommend {
+    width: 30px;
+    height: 30px;
+    background: url(../img/view/icon_recommend.png) no-repeat;
+}
+.icon-new {
+    width: 30px;
+    height: 30px;
+    background: url(../img/view/icon_new.png) no-repeat;
 }
 
 /* tab */

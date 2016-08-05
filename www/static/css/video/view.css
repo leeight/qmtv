@@ -1,0 +1,162 @@
+/**
+ * @file css/video/view.css 播放页样式
+ * @author zhangzhe
+ */
+
+main {
+    padding-bottom: 60px;
+}
+
+.view-container {
+    width: 100%;
+    height: 750px;
+    background: url('../../img/view/background.png') no-repeat;
+}
+
+.view-container .content {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+
+.view-container .content .header {
+    color: #FFF;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 18px;
+}
+
+.view-container .content .header a {
+    color: #FFF;
+}
+
+.header .icon-view-header {
+    background: url('../../img/view/icon_view_header.png') no-repeat;
+    width: 14px;
+    height: 13px;
+    margin-right: 5px;
+}
+
+.split {
+    margin: 0 6px;
+}
+
+.video-container {
+    width: 896px;
+    float: left;
+}
+
+.video-container .cyberplayer {
+    width: 896px;
+    height: 504px;
+    background: #000;
+}
+
+.video-info {
+    position: relative;
+    overflow: hidden;
+    background: #FFF;
+    width: 856px;
+    padding: 20px 20px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+
+.video-info .title {
+    font-size: 20px;
+    color: #34373b;
+    height: 20px;
+    line-height: 20px;
+    max-width: 500px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.video-info .play-count {
+    position: absolute;
+    right: 20px;
+    top: 22px;
+    opacity: 0.5;
+    font-size: 12px;
+    color: #34373b;
+}
+
+.play-count .real-play-count {
+    margin-right: 5px;
+}
+
+.video-info .anchor-info {
+    margin-top: 24px;
+}
+
+.video-info .anchor-info .avator {
+    width: 64px;
+    height: 64px;
+    float: left;
+    clear: both;
+}
+
+.video-info .anchor-info .avator img {
+    border-radius: 4px;
+}
+
+.video-info .anchor-introduction {
+    margin-left: 76px;
+}
+
+.anchor-introduction .name {
+    font-size: 16px;
+    color: #34373b;
+}
+
+.anchor-introduction .anchor-description {
+    opacity: 0.3;
+    font-size: 12px;
+    color: #34373b;
+}
+
+.anchor-introduction .fans {
+    background: #fd472e;
+    border-radius: 2px;
+    padding: 5px 10px 5px 18px;
+    display: inline-block;
+    margin-top: 12px;
+    color: #FFF;
+}
+
+.fans label {
+    width: 44px;
+    display: inline-block;
+    font-size: 14px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.fans .real-subscription {
+    font-size: 12px;
+    display: inline-block;
+    margin-left: 8px;
+}
+
+.recommend-videos {
+    width: 1216px;
+    margin: 0 auto;
+    margin-top: 30px;
+    overflow: hidden;
+}
+
+.recommend-videos h2 {
+    font-size: 18px;
+    color: #34373b;
+    margin-bottom: 20px;
+}
+
+.icon-recommend,
+.icon-new {
+    margin-right: 6px;
+}
+
+.video {
+    margin-bottom: 0;
+}
