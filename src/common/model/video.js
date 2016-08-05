@@ -17,8 +17,8 @@ export default class extends think.model.relation {
         // }
     }
 
-    async top(n = 10, vids) {
-        let query = this.limit(n);
+    async top(n = 10, vids, f = true) {
+        let query = this.limit(n).order('base_play_count + real_play_count DESC')
 
         if (vids) {
             if (vids.length <= 0) {
@@ -32,13 +32,16 @@ export default class extends think.model.relation {
 
         // TODO(leeight) 这样子的查询可能存在性能问题
         // this.relation 的配置貌似没有效果，为啥呢？
-        for (let i = 0; i < videos.length; i++) {
-            let video = videos[i];
-            let uid = video.anchor;
-            video.anchor = await this.model('anchor')
-              .cache(60)
-              .where({uid})
-              .find();
+        // recommend_topic.js 里面就不这么查询了，批量去初始化 anchor 的内容
+        if (f) {
+            for (let i = 0; i < videos.length; i++) {
+                let video = videos[i];
+                let uid = video.anchor;
+                video.anchor = await this.model('anchor')
+                    .cache(60)
+                    .where({uid})
+                    .find();
+            }
         }
 
         return videos;
