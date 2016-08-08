@@ -35,6 +35,10 @@ export default class extends think.model.relation {
             query.where({id: vids});
         }
 
+        if (!f) {
+            query.setRelation(false);
+        }
+        
         let videos = await query.select();
         return videos;
     }

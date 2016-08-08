@@ -40,11 +40,11 @@ export default class extends Base {
 
             if (category) {
                 totalCount = await this.model('video')
-                    .where({topic: category.id})
+                    .where({topic_id: category.id})
                     .count();
                 videos = await this.model('video')
                     .setRelation('anchor')
-                    .where({topic: category.id})
+                    .where({topic_id: category.id})
                     .order(orderByValue)
                     .page(page)
                     .select();
