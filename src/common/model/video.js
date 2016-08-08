@@ -11,13 +11,13 @@ export default class extends think.model.relation {
         this.relation = {
             anchor: {
                 type: think.model.BELONG_TO,
-                key: 'anchor',
+                key: 'anchor_id',
                 fKey: 'uid',
                 relation: false
             },
             topic: {
                 type: think.model.BELONG_TO,
-                key: 'topic',
+                key: 'topic_id',
                 fKey: 'id',
                 relation: false
             }
@@ -35,21 +35,7 @@ export default class extends think.model.relation {
             query.where({id: vids});
         }
 
-        let videos = await query.setRelation(false).select();
-
-        // TODO(leeight) 这样子的查询可能存在性能问题
-        // this.relation 的配置貌似没有效果，为啥呢？
-        // recommend_topic.js 里面就不这么查询了，批量去初始化 anchor 的内容
-        if (f) {
-            for (let i = 0; i < videos.length; i++) {
-                let video = videos[i];
-                let uid = video.anchor;
-                video.anchor = await this.model('anchor')
-                    .where({uid})
-                    .find();
-            }
-        }
-
+        let videos = await query.select();
         return videos;
     }
 

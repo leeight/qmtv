@@ -11,7 +11,7 @@ export default class extends think.model.relation {
                 type: think.model.HAS_MANY,
                 model: 'video',
                 key: 'uid',
-                fKey: 'anchor',
+                fKey: 'anchor_id',
                 limit: 16
             }
         }

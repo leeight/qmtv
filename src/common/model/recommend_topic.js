@@ -20,7 +20,7 @@ export default class extends think.model.base {
             // 对于 Anchor 只收集Id，然后统一查询
             let uids = topic.anchors ? topic.anchors.split(';') : [];
             anchorIds.push.apply(anchorIds, uids);
-            anchorIds.push.apply(anchorIds, topic.videos.map(item => item.anchor));
+            anchorIds.push.apply(anchorIds, topic.videos.map(item => item.anchor_id));
         }
 
         // 收集所有的 anchor id，然后再恢复上去
@@ -34,7 +34,7 @@ export default class extends think.model.base {
             let topic = topics[i];
             let uids = topic.anchors ? topic.anchors.split(';') : [];
             topic.anchors = _.compact(uids.map(uid => anchorMap[uid]));
-            topic.videos.forEach(video => video.anchor = anchorMap[video.anchor]);
+            topic.videos.forEach(video => video.anchor = anchorMap[video.anchor_id]);
         }
         
         return topics;

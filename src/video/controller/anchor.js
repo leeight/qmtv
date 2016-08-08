@@ -24,7 +24,7 @@ export default class extends Base {
             .where({uid})
             .list(page, orderByValue);
         let totalCount = await this.model('video')
-            .where({anchor: uid})
+            .where({anchor_id: uid})
             .count();
         this.assign({
             anchor, totalCount, page, pageSize,
