@@ -27,6 +27,11 @@ main {
     margin-right: -16px;
     margin-top: 20px;
 }
+.videos:after {
+    content: "";
+    display: table;
+    clear: both;
+}
 
 @media all and (min-width: 1300px) {
     .content {
@@ -39,9 +44,6 @@ main {
 }
 
 /* video */
-.videos {
-    overflow: hidden;
-}
 .video {
     width: 288px;
     float: left;
