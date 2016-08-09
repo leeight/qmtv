@@ -9,17 +9,16 @@ export default class extends Base {
      */
     async indexAction(){
         try {
-            let QmtvService = think.service('qmtv');
-            let instance = new QmtvService();
+            // let QmtvService = think.service('qmtv');
+            // let instance = new QmtvService();
 
-            let model = this.model('recommend_topic');
-            let topics = await model.top(5);
+            let videos = await this.model('recommend_video').top(3);            
+            let topics = await this.model('recommend_topic').top(5);
 
             this.assign({
-              hello: 'world',
-              topics,
+              topics, videos
             });
-            //auto render template file index_index.html
+
             return this.display();
         }
         catch (err) {

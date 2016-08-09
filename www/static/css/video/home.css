@@ -3,6 +3,35 @@
  * @author leeight
  */
 
+.coverflow-wrapper {
+    height: 315px;
+    margin-bottom: 30px;
+}
+.coverflow-wrapper figure {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.coverflow-wrapper figcaption {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 664px;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+    font-size: 16px;
+    display: none;
+}
+.coverflow-wrapper figcaption h3 {
+    font-size: 20px;
+    margin-top: 10px;
+    font-weight: normal;
+}
+.ui-state-active figcaption {
+    display: block;
+}
+
 .topic .header {
     overflow: hidden;
     padding: 15px 0;

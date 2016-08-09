@@ -6,6 +6,22 @@
 
 <!-- block: body -->
 <div class="content">
+  <!-- if: ${videos.length} -->
+  <div class="coverflow-wrapper">
+    <div id="coverflow">
+      <!-- for: ${videos} as ${video} -->
+      <figure>
+        <img width="664" height="305" src="${video.thumbnail_url}" />
+        <figcaption>
+          <p>${video.name}</p>
+          <h3>主播【${video.anchor.name}】</h3>
+        </figcaption>
+      </figure>
+      <!-- /for -->
+    </div>
+  </div>
+  <!-- /if -->
+
   <!-- for: ${topics} as ${topic} -->
   <!-- use: home_topic(topic=${topic})-->
   <!-- /for -->
