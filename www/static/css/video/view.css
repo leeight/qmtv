@@ -31,6 +31,10 @@ main {
     color: #FFF;
 }
 
+.view-container .content .header a:hover {
+    color: #FF5757;
+}
+
 .header .icon-view-header {
     background: url('../../img/view/icon_view_header.png') no-repeat;
     width: 14px;
@@ -121,12 +125,31 @@ main {
     color: #34373b;
 }
 
+.anchor-introduction .status {
+    margin-top: 12px;
+}
+
 .anchor-introduction .fans {
     background: #fd472e;
     border-radius: 2px;
     padding: 6px 10px 7px 18px;
     display: inline-block;
     color: #FFF;
+    font-size: 14px;
+}
+
+.anchor-introduction .is-live {
+    background: #00acff;
+    border-radius: 2px;
+    display: inline-block;
+    color: #FFF;
+    padding: 5px 10px 5px 10px;
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.is-live .icon-tv {
+    vertical-align: sub;
 }
 
 .fans label {

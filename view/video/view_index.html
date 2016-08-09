@@ -41,10 +41,11 @@
                         <!-- /if -->
                     </div>
                     <div class="status">
-                        <!-- if: ${video.anchor.real_subscription} -->
+                        <!-- if: ${video.anchor.real_subscription} && ${video.anchor.real_subscription} -->
                         <div class="fans">
                             <label>订阅</label>
-                            <span class="real-subscription">${video.anchor.real_subscription}</span>
+                            <!-- var: subscription = ${video.anchor.real_subscription} + ${video.anchor.real_subscription} -->
+                            <span class="real-subscription">${subscription}</span>
                         </div>
                         <!-- /if -->
                         <div class="living">
