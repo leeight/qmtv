@@ -1,6 +1,7 @@
 <!-- target: page(master=layout) -->
 
 <!-- block: biz_style -->
+<link rel="stylesheet" href="/static/css/coverflow.css" />
 <link rel="stylesheet" href="/static/css/video/home.css" />
 <!-- /block -->
 
@@ -11,7 +12,7 @@
     <div id="coverflow">
       <!-- for: ${videos} as ${video} -->
       <figure>
-        <img width="664" height="305" src="${video.thumbnail_url}" />
+        <a href="/video/${video.id}" target="_blank" title="${video.name}"><img width="664" height="305" src="${video.thumbnail_url}" /></a>
         <figcaption>
           <p>${video.name}</p>
           <h3>主播【${video.anchor.name}】</h3>

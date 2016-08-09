@@ -1,6 +1,4 @@
 define(function (require) {
-require('css!./coverflow.css');
-
 var jQuery = require('jquery');
 
 /*! CoverflowJS - v3.0.2 - 2015-12-31
