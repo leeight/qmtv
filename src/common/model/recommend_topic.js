@@ -10,8 +10,11 @@ export default class extends think.model.base {
         let topics = await this.limit(n).select();
 
         let anchorIds = [];
+        let topicIds = [];
         for (let i = 0; i < topics.length; i++) {
             let topic = topics[i];
+
+            topicIds.push(topic.id);
 
             // 先查询 Video
             let vids = topic.videos ? topic.videos.split(';') : [];
@@ -29,14 +32,28 @@ export default class extends think.model.base {
             .select();
         let anchorMap = _.keyBy(anchors, 'uid');
 
-        // 恢复 topics.anchors 的内容
+        // 查一下 Ranks 的信息
+        let videoRanking = await this.model('recommend_topic_video_ranking')
+            .where({recommend_topic_id: topicIds})
+            .order('video_ranking DESC')
+            .limit(10)
+            .select();
+        let anchorRanking = await this.model('recommend_topic_anchor_ranking')
+            .where({recommend_topic_id: topicIds})
+            .order('anchor_ranking DESC')
+            .limit(10)
+            .select();
+        
+        // 恢复 topics.anchors 和 topics.ranking 的内容
         for (let i = 0; i < topics.length; i++) {
             let topic = topics[i];
             let uids = topic.anchors ? topic.anchors.split(';') : [];
             topic.anchors = _.compact(uids.map(uid => anchorMap[uid]));
             topic.videos.forEach(video => video.anchor = anchorMap[video.anchor_id]);
+            topic.video_rankings = _.filter(videoRanking, item => item.recommend_topic_id === topic.id);
+            topic.anchor_rankings = _.filter(anchorRanking, item => item.recommend_topic_id === topic.id);
         }
-        
+
         return topics;
     }
 }

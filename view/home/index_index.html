@@ -40,30 +40,18 @@
       <div class="tab-body">
         <div class="video-rank">
           <ol>
-            <li><i class="rank-0">1</i><a href="">黄老师说标题让我随便写</a></li>
-            <li><i class="rank-1">2</i><a href="">浪漫夏季，我和你</a></li>
-            <li><i class="rank-2">3</i><a href="">碧哥:7点网三水友赛</a></li>
-            <li><i>4</i><a href="">碧哥:7点网三水友赛哈</a></li>
-            <li><i>5</i><a href="">黄老师说标题让我随便写</a></li>
-            <li><i>6</i><a href="">黄老师说标题让我随便写是吗23...</a></li>
-            <li><i>7</i><a href="">黄老师说标题让我随便写是吗dd...</a></li>
-            <li><i>8</i><a href="">浪漫夏季，我和你，你和我巴dd...</a></li>
-            <li><i>9</i><a href="">哦里了哦里了哦里了哦里了</a></li>
-            <li><i>10</i><a href="">哦里了哦里了哦里了哦里了</a></li>
+            <!-- for: ${topic.video_rankings} as ${item}, ${index} -->
+            <!-- var: _index = ${index} + 1; -->
+            <li><i class="rank-${index}">${_index}</i><a href="/video/${item.video_id}">${item.video_name}</a></li>
+            <!-- /for -->
           </ol>
         </div>
         <div class="anchor-rank" style="display: none">
           <ol>
-            <li><i class="rank-0">1</i><a href="">喵z</a><span>198万</span></li>
-            <li><i class="rank-1">2</i><a href="">帝师</a><span>198万</span></li>
-            <li><i class="rank-2">3</i><a href="">你的喵</a><span>198万</span></li>
-            <li><i>4</i><a href="">zzzzzzzz</a><span>198万</span></li>
-            <li><i>5</i><a href="">慕诗琪</a><span>198万</span></li>
-            <li><i>6</i><a href="">琦琦</a><span>198万</span></li>
-            <li><i>7</i><a href="">喵的喵的苗</a><span>198万</span></li>
-            <li><i>8</i><a href="">呵呵哒</a><span>198万</span></li>
-            <li><i>9</i><a href="">哦里了</a><span>198万</span></li>
-            <li><i>10</i><a href="">OMG</a><span>198万</span></li>
+            <!-- for: ${topic.anchor_rankings} as ${item}, ${index} -->
+            <!-- var: _index = ${index} + 1; -->
+            <li><i class="rank-${index}">${_index}</i><a href="/video/anchor/${item.anchor_id}">${item.anchor_name}</a><span>${item.play_count}</span></li>
+            <!-- /for -->
           </ol>
         </div>
       </div>
