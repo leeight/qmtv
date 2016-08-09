@@ -67,6 +67,9 @@
     padding: 5px 15px;
     padding-left: 10px;
 }
+.profile .disabled a {
+    background: #ccc;
+}
 .navs {
     text-align: center;
     position: relative;

@@ -18,7 +18,7 @@
         </h3>
         <p>${anchor.description}</p>
       </div>
-      <div class="follow">
+      <div class="follow disabled">
         <a href="javascript:void(0)"><i class="icon-plus"></i> 订阅</a>
       </div>
     </div>
@@ -48,6 +48,7 @@
   <!-- /if -->
 </div>
 <script>
+var G_ANCHOR_ID = '${anchor.uid}';
 require(['video/anchor'], function (app) {
   app.start(${page}, ${pageSize}, ${totalCount});
 });
