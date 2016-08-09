@@ -21,10 +21,14 @@ define(function (require) {
             $(this).parent('ul').next().find('>div.' + $(this).data('body')).show();
         });
 
+        $('.coverflow-wrapper .loading').remove();
+
+        $('#coverflow').show();
+
         $('#coverflow').coverflow({
             active: 1,
             select: function(event, ui){
-                console.log('here');
+                // console.log('here');
             }
         });
         
@@ -32,7 +36,6 @@ define(function (require) {
             if(!$(this).hasClass('ui-state-active')){
                 return;
             }
-            
             $('#coverflow').coverflow('next');
         });
     };

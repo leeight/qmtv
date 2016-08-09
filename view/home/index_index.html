@@ -9,7 +9,8 @@
 <div class="content">
   <!-- if: ${videos.length} -->
   <div class="coverflow-wrapper">
-    <div id="coverflow">
+    <div class="loading">加载中...</div>
+    <div id="coverflow" style="display: none">
       <!-- for: ${videos} as ${video} -->
       <figure>
         <a href="/video/${video.id}" target="_blank" title="${video.name}"><img width="664" height="305" src="${video.thumbnail_url}" /></a>
