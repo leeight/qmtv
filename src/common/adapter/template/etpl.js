@@ -38,6 +38,9 @@ export default class extends Base {
     engine.addFilter('encode_uri', function (part) {
       return encodeURIComponent(part);
     });
+    engine.addFilter('f_strip_ws', function (html) {
+        return html.replace(/(>)\s+(<\/?)/g, '$1 $2');
+    });
     engine.addFilter('to_hms', function (seconds) {
       if (seconds < 60) {
         return '00:' + seconds;
