@@ -98,6 +98,10 @@ main {
     clear: both;
 }
 
+.status {
+    padding-top: 12px;
+}
+
 .video-info .anchor-info .avator img {
     border-radius: 4px;
 }
@@ -120,14 +124,14 @@ main {
 .anchor-introduction .fans {
     background: #fd472e;
     border-radius: 2px;
-    padding: 5px 10px 5px 18px;
+    padding: 6px 10px 7px 18px;
     display: inline-block;
-    margin-top: 12px;
     color: #FFF;
 }
 
 .fans label {
     width: 44px;
+    cursor: pointer;
     display: inline-block;
     font-size: 14px;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
@@ -135,8 +139,28 @@ main {
 
 .fans .real-subscription {
     font-size: 12px;
+    cursor: pointer;
     display: inline-block;
     margin-left: 8px;
+}
+.living {
+    display: inline-block;
+    cursor: pointer;
+}
+.living strong {
+    background: #00acff;
+    padding: 5px 12px;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 14px;
+    margin-left: 10px;
+    line-height: 19px;
+    display: inline-block;
+}
+.living strong .icon-tv {
+    position: relative;
+    top: 2px;
 }
 
 .recommend-videos {

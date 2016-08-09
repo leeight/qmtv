@@ -113,10 +113,14 @@ main {
 .icon-duration,
 .icon-play,
 .icon-tv,
+.icon-plus,
 .icon-microphone {
     width: 16px;
     height: 16px;
     display: inline-block;
+}
+.icon-plus {
+    background: url(../img/qmv_icon_plus.png) no-repeat center center;
 }
 .icon-tv {
     background: url(../img/qmv_icon_tv.png) no-repeat 1px 1px;  
