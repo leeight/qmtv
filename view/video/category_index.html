@@ -12,7 +12,7 @@
         <th class="all"><a href="/video/category/all">全部</a></th>
         <td>
             <!-- for: ${categories} as ${c} -->
-            <a href="/video/category/${c.name}"
+            <a href="/video/category/${c.name|encode_uri}"
               <!-- if: ${c.name} == ${category.name}-->class="active"<!-- /if -->
             >${c.name}</a>
             <!-- /for -->

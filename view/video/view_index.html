@@ -9,7 +9,7 @@
     <div class="content">
         <div class="header">
             <i class="icon icon-view-header"></i>
-            <span class="topic">${video.topic.name}</span>
+            <span class="topic"><a href="/video/category/${video.topic.name|encode_uri}">${video.topic.name}</a></span>
             <span class="split">/</span>
             <span class="anchor-name"><a href="/video/anchor/${video.anchor.uid}">${video.anchor.name}</a></span>
             <span class="split">/</span>

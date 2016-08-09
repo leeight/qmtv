@@ -35,6 +35,9 @@ export default class extends Base {
 
     // FIXME(leeight) 在 production 环境下面，不应该被重复调用，应该只初始化一次
     let engine = new etpl.Engine(options);
+    engine.addFilter('encode_uri', function (part) {
+      return encodeURIComponent(part);
+    });
     engine.addFilter('to_hms', function (seconds) {
       if (seconds < 60) {
         return '00:' + seconds;
