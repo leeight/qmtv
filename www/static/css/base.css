@@ -48,6 +48,10 @@ main {
     margin-right: 16px;
     margin-bottom: 16px;
 }
+.video:hover {
+    box-shadow: -4px -4px 5px #D2D2D2,4px 4px 5px #D2D2D2;
+    border-radius: 5px;
+}
 .video figure {
     margin: 0;
 }
@@ -57,14 +61,21 @@ main {
     display: inline-block;
 }
 .video .preview .hover {
-    display: none;
+    position: absolute;
+    z-index: 1000;
+    width: 70px;
+    height: 70px;
+    left: 50%;
+    top: 43px;
+    margin-left: -35px;
+    background: url(http://www.quanmin.tv/static/images/play.png) no-repeat;
+    transition: all .3s ease-out;
+    transform: scale(1.5);
+    opacity: 0;
 }
 .video .preview:hover .hover {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1000;
+    opacity: 0.5;
+    transform: scale(1);
 }
 .video figcaption {
     background: #fff;
