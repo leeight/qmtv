@@ -45,7 +45,6 @@ export default class extends think.model.relation {
 
     // 根据视频id查询单个视频(包括主播和分类信息)
     async getVideoById(vid) {
-        // 为了性能先sql
         return await this.where({id: vid}).find();
     }
 }

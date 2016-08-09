@@ -21,7 +21,6 @@ export default class extends Base {
             if (topicVideoIds.length > 0) {
                 topicVideos = await this.model('video').where({id: topicVideoIds}).limit(4).select();
             }
-            // TODO 现在 videos数组里面anchor和topic都还不对，得再搞搞
             this.assign({
                 video,
                 anchor,
