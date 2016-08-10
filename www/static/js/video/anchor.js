@@ -55,6 +55,12 @@ define(function (require) {
                 });
             }
         });
+
+        AnchorModel.get(G_ANCHOR_ID).done(function (data, textStatus, jqXHR) {
+            if (data && data.play_status === true) {
+                $('.info h3 strong').show();
+            }
+        });
     };
 
     return exports;

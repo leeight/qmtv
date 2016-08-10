@@ -102,10 +102,6 @@ main {
     clear: both;
 }
 
-.status {
-    padding-top: 12px;
-}
-
 .video-info .anchor-info .avator img {
     border-radius: 4px;
 }
@@ -132,7 +128,7 @@ main {
 .anchor-introduction .fans {
     background: #fd472e;
     border-radius: 2px;
-    padding: 5px 10px 5px 18px;
+    padding: 6px 10px 7px 18px;
     display: inline-block;
     color: #FFF;
     font-size: 14px;

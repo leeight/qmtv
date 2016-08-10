@@ -8,6 +8,14 @@ define(function (require) {
 
     var exports = {};
 
+    exports.get = function (anchorId) {
+        return $.ajax({
+            url: '/json/rooms/' + anchorId + '/info4.json',
+            method: 'get',
+            dataType: 'json'
+        });
+    };
+
     exports.isFollow = function (anchorId) {
         return $.ajax({
             url: '/user/isFollow',

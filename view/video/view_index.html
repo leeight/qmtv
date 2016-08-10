@@ -48,7 +48,7 @@
                             <span class="real-subscription">${subscription}</span>
                         </div>
                         <!-- /if -->
-                        <div class="living">
+                        <div class="living" style="display: none">
                             <strong><i class="icon-tv"></i>正在直播</strong>
                         </div>
                     </div>
@@ -78,5 +78,10 @@
 </div>
 <!-- /if -->
 
-<script>require(['video/view'], function (app) { app.start('${video.play_url}', '${video.thumbnail_url}'); });</script>
+<script>
+var G_ANCHOR_ID = '${video.anchor.uid}';
+require(['video/view'], function (app) {
+    app.start('${video.play_url}', '${video.thumbnail_url}');
+});
+</script>
 <!-- /block -->

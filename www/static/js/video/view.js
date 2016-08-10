@@ -6,6 +6,7 @@
 define(function (require) {
     var $ = require('jquery');
     var cyberplayer = require('cyberplayer');
+    var AnchorModel = require('../base/anchor_model');
 
     var exports = {};
 
@@ -30,6 +31,12 @@ define(function (require) {
     exports.start = function (videoUrl, thumbnailUrl) {
         // 播放器初始化
         cyberplayerInit(videoUrl, thumbnailUrl, 'playerContainer');
+
+        AnchorModel.get(G_ANCHOR_ID).done(function (data, textStatus, jqXHR) {
+            if (data && data.play_status === true) {
+                $('.living').show();
+            }
+        });
     };
 
     return exports;
