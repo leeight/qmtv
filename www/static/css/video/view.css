@@ -132,10 +132,11 @@ main {
 .anchor-introduction .fans {
     background: #fd472e;
     border-radius: 2px;
-    padding: 6px 10px 7px 18px;
+    padding: 5px 10px 5px 18px;
     display: inline-block;
     color: #FFF;
     font-size: 14px;
+    vertical-align: top;
 }
 
 .anchor-introduction .is-live {
