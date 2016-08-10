@@ -193,6 +193,9 @@ ul.tab li.active span {
 /* misc */
 p.empty {
     margin-bottom: 20px;
+    text-align: center;
+    background: url(../img/qmv_icon_empty.png) no-repeat center top;
+    padding-top: 180px;
 }
 
 /* pager */
