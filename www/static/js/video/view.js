@@ -7,7 +7,7 @@ define(function (require) {
     var $ = require('jquery');
     var cyberplayer = require('cyberplayer');
     var AnchorModel = require('../base/anchor_model');
-    var ZeroClipboard = require('zeroclipboard/ZeroClipboard');
+    var ZeroClipboard = require('zeroclipboard/ZeroClipboard.min');
 
     var exports = {};
 
