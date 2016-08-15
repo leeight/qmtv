@@ -3,6 +3,10 @@
  * @author zhangzhe
  */
 
+body {
+    overflow-x: hidden;
+}
+
 main {
     padding-bottom: 60px;
 }
@@ -11,6 +15,7 @@ main {
     width: 100%;
     height: 750px;
     background: url('../../img/view/background.png') no-repeat;
+    background-position-x: center;
 }
 
 .view-container .content {
@@ -46,22 +51,15 @@ main {
     margin: 0 6px;
 }
 
-.video-container {
-    width: 896px;
-    float: left;
-}
-
 .video-container .cyberplayer {
-    width: 896px;
+    width: 1200px;
     height: 504px;
     background: #000;
 }
 
 .video-info {
     position: relative;
-    overflow: hidden;
     background: #FFF;
-    width: 856px;
     padding: 20px 20px;
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px;
@@ -85,6 +83,15 @@ main {
     opacity: 0.5;
     font-size: 12px;
     color: #34373b;
+}
+
+.video-info .share {
+    width: 20px;
+    height: 18px;
+    background: url('../../img/share.png') no-repeat;
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
 }
 
 .play-count .real-play-count {
@@ -128,7 +135,7 @@ main {
 .anchor-introduction .fans {
     background: #fd472e;
     border-radius: 2px;
-    padding: 6px 10px 7px 18px;
+    padding: 5px 10px 7px 18px;
     display: inline-block;
     color: #FFF;
     font-size: 14px;
@@ -203,3 +210,89 @@ main {
 .topic-videos {
     margin-top: 15px;
 }
+
+.hidden {
+    display: none;
+}
+
+.share-box {
+    width: 320px;
+    height: 195px;
+    border-top: 4px solid #FD472E;
+    background: #FFF;
+    position: absolute;
+    z-index: 100;
+    right: -129px;
+    bottom: -192px;
+    border-radius: 3px;
+    display: none;
+}
+
+.share-box .arrow {
+    width: 15px;
+    height: 9px;
+    display: inline-block;
+    background: url('../../img/sanjiao.png') no-repeat;
+    position: absolute;
+    top: -9px;
+    left: 152.5px;
+}
+
+@media all and (max-width: 1500px) {
+    .share-box {
+        right: -60px;
+    }
+
+    .share-box .arrow {
+        left: 222px;
+    }
+}
+
+.share-box .bdsharebuttonbox {
+    margin: 20px;
+    margin-right: 0;
+}
+
+.share-box .bdsharebuttonbox a {
+    margin-right: 18px;
+}
+
+.share-box .copy-url {
+    border-top: 1px solid rgba(230, 237, 240, 0.50);
+}
+
+.share-box .copy-url .title {
+    font-size: 14px;
+    color: #999;
+    margin-left: 20px;
+    margin-top: 18px;
+}
+
+.share-box .copy-url .content-div {
+    margin-left: 20px;
+    margin-top: 10px;
+}
+
+.share-box .copy-url .content-div input {
+    line-height: 40px;
+    font-size: 14px;
+    color: #999;
+    background: #f5f8fa;
+    border: 1px solid #e6edf0;
+    border-radius:2px;
+    width:160px;
+    height:38px;
+    padding-left: 13px;
+    padding-right: 15px;
+}
+
+.share-box .copy-url .content-div .copy-button {
+    border-radius: 2px;
+    width: 80px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 14px;
+    margin-left: 8px;
+}
+

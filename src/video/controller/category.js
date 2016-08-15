@@ -14,9 +14,9 @@ export default class extends Base {
      */
     async indexAction(){
         let name = this.get('category') || '';
-        let orderBy = this.get('orderBy') || 'create_time';
-        let orderByValue = orderBy == 'create_time'
-            ? 'create_time DESC'
+        let orderBy = this.get('orderBy') || 'start_time';
+        let orderByValue = orderBy == 'start_time'
+            ? 'start_time DESC'
             : 'base_play_count + real_play_count DESC';
         let page = parseInt(this.get('page'), 10) || 1;
         let pageSize = 20;

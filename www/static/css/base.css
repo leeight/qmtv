@@ -222,3 +222,18 @@ p.empty {
 .pager ul li.item-current {
     background: transparent;
 }
+
+.hidden {
+    display: none;
+}
+
+.blue-skin-button {
+    background: #00acff;
+    color: #FFF;
+    border: none;
+    cursor: pointer;
+}
+
+.blue-skin-button:hover {
+    background-color: #0088f9;
+}

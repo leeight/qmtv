@@ -14,7 +14,7 @@ export default class extends Base {
             let videoId = this.get('id');
             let video = await this.model('video').getVideoById(videoId);
             // 获取主播信息，其中包括四个最新视频
-            let anchor = await this.model('anchor').where({uid: video.anchor.uid}).list([1, 4], 'create_time DESC');
+            let anchor = await this.model('anchor').where({uid: video.anchor.uid}).list([1, 4], 'start_time DESC');
             // topic下获取4个推荐视频
             let topicVideoIds = video.topic.videos ? video.topic.videos.split(';') : [];
             let topicVideos = [];
