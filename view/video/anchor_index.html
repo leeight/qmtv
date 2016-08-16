@@ -9,7 +9,11 @@
   <div class="anchor">
     <div class="profile">
       <div class="avatar">
+        <!-- if: ${anchor.avatar} -->
         <img width="80" height="80" src="${anchor.avatar}" />
+        <!-- else -->
+        <img width="80" height="80" src="http://dummyimage.com/80x80" />
+        <!-- /if -->
       </div>
       <div class="info">
         <h3>
@@ -28,7 +32,7 @@
       </div>
       <!-- if: ${anchor.videos.length} -->
       <ul class="tab">
-        <li<!-- if: ${orderBy} == "create_time" --> class="active"<!-- /if -->><span><a href="?orderBy=create_time">最新发布</a></span></li>
+        <li<!-- if: ${orderBy} == "start_time" --> class="active"<!-- /if -->><span><a href="?orderBy=start_time">最新发布</a></span></li>
         <li<!-- if: ${orderBy} == "play_count" --> class="active"<!-- /if -->><span><a href="?orderBy=play_count">最多播放</a></span></li>
       </ul>
       <!-- /if -->
