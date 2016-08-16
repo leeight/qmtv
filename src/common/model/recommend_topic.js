@@ -33,15 +33,14 @@ export default class extends think.model.base {
         let anchorMap = _.keyBy(anchors, 'uid');
 
         // 查一下 Ranks 的信息
+        // TODO(x) 这里可能存在数据量过大的问题
         let videoRanking = await this.model('recommend_topic_video_ranking')
             .where({recommend_topic_id: topicIds})
-            .order('video_ranking DESC')
-            .limit(10)
+            .order('video_ranking ASC')
             .select();
         let anchorRanking = await this.model('recommend_topic_anchor_ranking')
             .where({recommend_topic_id: topicIds})
-            .order('anchor_ranking DESC')
-            .limit(10)
+            .order('anchor_ranking ASC')
             .select();
         
         // 恢复 topics.anchors 和 topics.ranking 的内容
@@ -50,8 +49,30 @@ export default class extends think.model.base {
             let uids = topic.anchors ? topic.anchors.split(';') : [];
             topic.anchors = _.compact(uids.map(uid => anchorMap[uid]));
             topic.videos.forEach(video => video.anchor = anchorMap[video.anchor_id]);
-            topic.video_rankings = _.filter(videoRanking, item => item.recommend_topic_id === topic.id);
-            topic.anchor_rankings = _.filter(anchorRanking, item => item.recommend_topic_id === topic.id);
+
+            let video_rankings = [];
+            let anchor_rankings = [];
+            let kMax = 10;  // 排行榜最大的条数
+            for (let i = 0; i < videoRanking.length; i++) {
+                let item = videoRanking[i];
+                if (item.recommend_topic_id === topic.id) {
+                    video_rankings.push(item);
+                    if (video_rankings.length >= kMax) {
+                        break;
+                    }
+                }
+            }
+            for (let i = 0; i < anchorRanking.length; i++) {
+                let item = anchorRanking[i];
+                if (item.recommend_topic_id === topic.id) {
+                    anchor_rankings.push(item);
+                    if (anchor_rankings.length >= kMax) {
+                        break;
+                    }
+                }
+            }
+            topic.video_rankings = video_rankings;
+            topic.anchor_rankings = anchor_rankings;
         }
 
         return topics;
