@@ -20,7 +20,11 @@
           ${anchor.name}
           <strong style="display: none"><i class="icon-tv"></i>正在直播</strong>
         </h3>
+        <!-- if: ${anchor.description} -->
         <p>${anchor.description}</p>
+        <!-- else -->
+        <p>这个人很懒，什么也没有留下</p>
+        <!-- /if -->
       </div>
       <div class="follow disabled">
         <a href="javascript:void(0)"><i class="icon-plus"></i> 订阅</a>

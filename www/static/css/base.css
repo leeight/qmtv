@@ -14,6 +14,10 @@ main {
     font-size: 14px;
 }
 
+figure, figcaption {
+    display: block;
+}
+
 .content {
     width: 1200px;
     /*max-width: 1504px;*/
@@ -26,6 +30,7 @@ main {
     /*max-width: 1520px;*/
     margin-right: -16px;
     margin-top: 20px;
+    zoom: 1;
 }
 .videos:after {
     visibility: hidden;
@@ -52,6 +57,7 @@ main {
     float: left;
     margin-right: 16px;
     margin-bottom: 16px;
+    background: #fff;
 }
 .video:hover {
     box-shadow: -4px -4px 5px #D2D2D2,4px 4px 5px #D2D2D2;
@@ -77,15 +83,18 @@ main {
     transition: all .3s ease-out;
     transform: scale(1.5);
     opacity: 0;
+    display: none\9;
 }
 .video .preview:hover .hover {
     opacity: 0.5;
     transform: scale(1);
+    display: inline\9;
 }
 .video figcaption {
     background: #fff;
     height: 46px;
     padding: 14px;
+    display: block;
 }
 .video figcaption h3 {
     font-size: 16px;
@@ -108,7 +117,6 @@ main {
 }
 
 
-/* icon */
 /* icon */
 .icon {
     display: inline-block;

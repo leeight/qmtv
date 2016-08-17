@@ -22,7 +22,7 @@
 .coverflow-wrapper figcaption {
     position: absolute;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.4);
     width: 664px;
     padding: 20px 0;
     text-align: center;
@@ -48,6 +48,10 @@
 .topic .header h2,
 .topic .header .anchors li {
     float: left;
+}
+.topic .header .anchors li a {
+    position: relative;
+    top: 4px\9;
 }
 
 .topic .header h2 {
