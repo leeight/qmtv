@@ -100,6 +100,7 @@ main {
 
 .video-info .anchor-info {
     margin-top: 24px;
+    overflow: hidden;
 }
 
 .video-info .anchor-info .avator {
