@@ -20,7 +20,10 @@ define(function (require) {
             autostart: false,
             repeat: false,
             controls: true,
-            ak: '468b8de7f7e84fb8ba5aa60c38b9edb0'
+            ak: '468b8de7f7e84fb8ba5aa60c38b9edb0',
+            controlbar: {
+                barLogo: false
+            }
         };
         if (thumbnailUrl) {
             cyberplayerOptions.image = thumbnailUrl;
