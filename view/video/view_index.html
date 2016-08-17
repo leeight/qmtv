@@ -103,4 +103,16 @@ require(['video/view'], function (app) {
     app.start('${video.play_url}', '${video.thumbnail_url}');
 });
 </script>
+<!--[if gt IE 8]><!-->
+<script>
+require(['zeroclipboard/Zeroclipboard.min'], function (ZeroClipboard) {
+    var client = new ZeroClipboard(document.getElementById('copyButton'));
+    client.on('ready', function(readyEvent) {
+        client.on('aftercopy', function (event) {
+            alert('地址复制成功');
+        });
+    });
+});
+</script>
+<!--<![endif]-->
 <!-- /block -->
