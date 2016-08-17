@@ -87,6 +87,8 @@ define(function (require) {
                 }
                 // 头像也用这个接口
                 $('.anchor-avatar').attr('src', data.avatar);
+                // 订阅数
+                $('.real-subscription').text(data.follow);
             }         
         });
 
