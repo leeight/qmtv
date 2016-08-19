@@ -41,13 +41,10 @@
                         <!-- /if -->
                     </div>
                     <div class="status">
-                        <!-- if: ${video.anchor.real_subscription} && ${video.anchor.real_subscription} -->
                         <div class="fans">
                             <label>订阅</label>
-                            <!-- var: subscription = ${video.anchor.real_subscription} + ${video.anchor.real_subscription} -->
-                            <span class="real-subscription">${subscription}</span>
+                            <span class="real-subscription"></span>
                         </div>
-                        <!-- /if -->
                         <div class="living hidden">
                             <strong><i class="icon-tv"></i>正在直播</strong>
                         </div>
@@ -103,4 +100,16 @@ require(['video/view'], function (app) {
     app.start('${video.play_url}', '${video.thumbnail_url}');
 });
 </script>
+<!--[if gt IE 8]><!-->
+<script>
+require(['zeroclipboard/Zeroclipboard.min'], function (ZeroClipboard) {
+    var client = new ZeroClipboard(document.getElementById('copyButton'));
+    client.on('ready', function(readyEvent) {
+        client.on('aftercopy', function (event) {
+            alert('地址复制成功');
+        });
+    });
+});
+</script>
+<!--<![endif]-->
 <!-- /block -->

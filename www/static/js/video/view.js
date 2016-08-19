@@ -7,7 +7,7 @@ define(function (require) {
     var $ = require('jquery');
     var cyberplayer = require('cyberplayer');
     var AnchorModel = require('../base/anchor_model');
-    var ZeroClipboard = require('zeroclipboard/ZeroClipboard.min');
+    var browserUtils = require('base/browserUtils');
 
     var exports = {};
 
@@ -17,10 +17,13 @@ define(function (require) {
             height: 504,
             stretching: 'uniform',
             file: videoUrl,
-            autostart: false,
+            autostart: true,
             repeat: false,
             controls: true,
-            ak: '468b8de7f7e84fb8ba5aa60c38b9edb0'
+            ak: '468b8de7f7e84fb8ba5aa60c38b9edb0',
+            controlbar: {
+                barLogo: false
+            }
         };
         if (thumbnailUrl) {
             cyberplayerOptions.image = thumbnailUrl;
@@ -65,13 +68,12 @@ define(function (require) {
             .appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js'
             + '?cdnversion='+~(-new Date()/36e5)];
 
-        // 地址复制相关
-        var client = new ZeroClipboard(document.getElementById('copyButton'));
-        client.on('ready', function(readyEvent) {
-            client.on('aftercopy', function (event) {
+        if (browserUtils.isPoorIE()) {
+            $('#copyButton').on('click', function() {
+                window.clipboardData.setData('Text', currentUrl);
                 alert('地址复制成功');
             });
-        });
+        }
     }
 
     exports.start = function (videoUrl, thumbnailUrl) {
@@ -85,6 +87,8 @@ define(function (require) {
                 }
                 // 头像也用这个接口
                 $('.anchor-avatar').attr('src', data.avatar);
+                // 订阅数
+                $('.real-subscription').text(data.follow);
             }         
         });
 
