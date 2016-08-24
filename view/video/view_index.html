@@ -102,7 +102,7 @@ require(['video/view'], function (app) {
 </script>
 <!--[if gt IE 8]><!-->
 <script>
-require(['zeroclipboard/Zeroclipboard.min'], function (ZeroClipboard) {
+require(['zeroclipboard/Zeroclipboard'], function (ZeroClipboard) {
     var client = new ZeroClipboard(document.getElementById('copyButton'));
     client.on('ready', function(readyEvent) {
         client.on('aftercopy', function (event) {

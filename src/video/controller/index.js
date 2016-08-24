@@ -9,12 +9,8 @@ export default class extends Base {
      */
     async indexAction(){
         try {
-            // let QmtvService = think.service('qmtv');
-            // let instance = new QmtvService();
-
             let videos = await this.model('recommend_video').top(3);            
             let topics = await this.model('recommend_topic').top(5);
-
             this.assign({
               topics, videos
             });

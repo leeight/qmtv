@@ -107,7 +107,7 @@
     margin-right: -16px;
     margin-top: 0;
 }
-@media all and (min-width: 1300px) {
+@media all and (min-width: 1400px) {
     .layout .videos {
         width: 1216px;
         margin-right: -16px;
@@ -173,4 +173,8 @@
 }
 .ranks .tab-body i.rank-2 {
     background: url(../../img/rank-2.png) no-repeat;
+}
+
+.ranks .tab-body .video-name {
+    max-width: 210px;
 }

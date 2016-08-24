@@ -41,7 +41,7 @@ figure, figcaption {
     height: 0;
 }
 
-@media all and (min-width: 1300px) {
+@media all and (min-width: 1400px) {
     .content {
         width: 1504px;
     }
@@ -231,6 +231,12 @@ p.empty {
     background: transparent;
 }
 
+.pager ul li a {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
 .hidden {
     display: none;
 }
@@ -244,4 +250,12 @@ p.empty {
 
 .blue-skin-button:hover {
     background-color: #0088f9;
+}
+
+.long-column {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
 }

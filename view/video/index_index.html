@@ -13,7 +13,7 @@
     <div id="coverflow" style="display: none">
       <!-- for: ${videos} as ${video} -->
       <figure>
-        <a href="/video/${video.id}" target="_blank" title="${video.name}"><img width="664" height="305" src="${video.thumbnail_url}" /></a>
+        <a href="/video/${video.id}" target="_blank" title="${video.name}"><img width="664" height="305" src="<!-- if: ${video.cover_url} -->${video.cover_url}<!-- else -->${video.thumbnail_url}<!-- /if -->" /></a>
         <figcaption>
           <p>${video.name}</p>
           <h3>主播【${video.anchor.name}】</h3>
@@ -60,7 +60,7 @@
           <ol>
             <!-- for: ${topic.video_rankings} as ${item}, ${index} -->
             <!-- var: _index = ${index} + 1; -->
-            <li><i class="rank-${index}">${_index}</i><a href="/video/${item.video_id}">${item.video_name}</a></li>
+            <li><i class="rank-${index}">${_index}</i><a class="long-column video-name" title="${item.video_name}" href="/video/${item.video_id}">${item.video_name}</a></li>
             <!-- /for -->
           </ol>
         </div>
@@ -68,7 +68,7 @@
           <ol>
             <!-- for: ${topic.anchor_rankings} as ${item}, ${index} -->
             <!-- var: _index = ${index} + 1; -->
-            <li><i class="rank-${index}">${_index}</i><a href="/video/anchor/${item.anchor_id}">${item.anchor_name}</a><span>${item.play_count}</span></li>
+            <li><i class="rank-${index}">${_index}</i><a title="${item.anchor_name}" href="/video/anchor/${item.anchor_id}">${item.anchor_name}</a><span>${item.play_count}</span></li>
             <!-- /for -->
           </ol>
         </div>
