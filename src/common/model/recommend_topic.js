@@ -6,8 +6,8 @@ var _ = require('lodash');
  * model
  */
 export default class extends think.model.base {
-    async top(n = 5) {
-        let topics = await this.limit(n).select();
+    async top(n) {
+        let topics = n ? await this.limit(n).select() : await this.select();
 
         let anchorIds = [];
         let topicIds = [];

@@ -7,10 +7,11 @@ export default class extends Base {
      * index action
      * @return {Promise} []
      */
-    async indexAction(){
+    async indexAction() {
         try {
-            let videos = await this.model('recommend_video').top(6);            
-            let topics = await this.model('recommend_topic').top(5);
+            let videos = await this.model('recommend_video').top(6);
+            // recommend_topics不做数量限制 zhangzhe 2016-08-25
+            let topics = await this.model('recommend_topic').top();
             this.assign({
               topics, videos
             });
