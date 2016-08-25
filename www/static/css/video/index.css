@@ -35,6 +35,37 @@
     margin-top: 10px;
     font-weight: normal;
 }
+
+.coverflow-change-page {
+    position: relative;
+}
+
+.coverflow-change-page .change-page {
+    width: 45px;
+    height: 86px;
+    position: absolute;
+    cursor: pointer;
+}
+
+.coverflow-change-page .prev {
+    background: url('../../img/prev_inactive.png') 100% 100% no-repeat;
+    left: -66px;
+    top: -235px;
+    opacity: 0.5;
+}
+.coverflow-change-page .prev.inactive {
+    display: none;
+}
+.coverflow-change-page .next {
+    background: url('../../img/next_inactive.png') 100% 100% no-repeat;
+    right: -66px;
+    top: -235px;
+    opacity: 0.5;
+}
+.coverflow-change-page .next.inactive {
+    display: none;
+}
+
 .ui-state-active figcaption {
     display: block;
 }

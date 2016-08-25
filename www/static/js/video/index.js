@@ -9,6 +9,32 @@ define(function (require) {
     var $ = require('jquery');
 
     var exports = {};
+    var coverflowIndex = 1;
+
+    function getCurrentCoverflowIndex() {
+        var index = 0;
+        $('#coverflow').find('figure').each(function () {
+            if (!$(this).hasClass('ui-state-active')) {
+                index++;
+            }
+            else {
+                return false;
+            }
+        });
+        return index;
+    }
+
+    function refreshChangePageStatus() {
+        var coverflowLength = $('#coverflow').find('figure').length;
+        var currentIndex = getCurrentCoverflowIndex();
+        $('.change-page').removeClass('inactive');
+        if (currentIndex === 0) {
+            $('.prev').addClass('inactive');
+        }
+        if (currentIndex === coverflowLength - 1) {
+            $('.next').addClass('inactive');
+        }
+    }
 
     exports.start = function () {
         $('ul.tab li').click(function () {
@@ -22,13 +48,12 @@ define(function (require) {
         });
 
         $('.coverflow-wrapper .loading').remove();
-
         $('#coverflow').show();
 
         $('#coverflow').coverflow({
-            active: 1,
-            select: function(event, ui){
-                // console.log('here');
+            active: coverflowIndex,
+            select: function (event, ui) {
+                refreshChangePageStatus();
             }
         });
         
@@ -36,8 +61,18 @@ define(function (require) {
             if(!$(this).hasClass('ui-state-active')){
                 return;
             }
+
             $('#coverflow').coverflow('next');
         });
+
+        $('.next').click(function () {
+            $('#coverflow').coverflow('next');
+        });
+
+        $('.prev').click(function () {
+            $('#coverflow').coverflow('prev');
+        });
+
     };
 
     return exports;
