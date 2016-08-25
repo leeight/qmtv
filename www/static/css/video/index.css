@@ -45,13 +45,17 @@
     height: 86px;
     position: absolute;
     cursor: pointer;
+    opacity: 0.3;
+}
+
+.coverflow-change-page .change-page:hover {
+    opacity: 0.4;
 }
 
 .coverflow-change-page .prev {
     background: url('../../img/prev_inactive.png') 100% 100% no-repeat;
     left: -66px;
     top: -235px;
-    opacity: 0.5;
 }
 .coverflow-change-page .prev.inactive {
     display: none;
@@ -60,7 +64,6 @@
     background: url('../../img/next_inactive.png') 100% 100% no-repeat;
     right: -66px;
     top: -235px;
-    opacity: 0.5;
 }
 .coverflow-change-page .next.inactive {
     display: none;
