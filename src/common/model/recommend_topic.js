@@ -18,7 +18,8 @@ export default class extends think.model.base {
 
             // 先查询 Video
             let vids = topic.videos ? topic.videos.split(';') : [];
-            topic.videos = await this.model('video').top(6, vids, false);
+            // 对于宽屏幕要拿8个 zhangzhe 2016-09-06改
+            topic.videos = await this.model('video').top(8, vids, false);
 
             // 对于 Anchor 只收集Id，然后统一查询
             let uids = topic.anchors ? topic.anchors.split(';') : [];

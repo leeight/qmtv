@@ -63,7 +63,7 @@
 
 <!-- target: home_topic_video -->
 <!-- var: play_count = ${video.real_play_count} + ${video.base_play_count};-->
-<div class="video">
+<div class="video <!-- if: ${index} === 0 || ${index} --> video-${index}<!-- /if -->">
   <figure>
     <a class="preview" href="/video/${video.id}" title="播放 ${video.name}">
       <!-- if: ${video.thumbnail_url} -->

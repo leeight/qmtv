@@ -73,6 +73,10 @@ define(function (require) {
             $('#coverflow').coverflow('prev');
         });
 
+        $(window).resize(function () {
+            $('#coverflow').coverflow();
+        });
+
     };
 
     return exports;

@@ -148,6 +148,13 @@
     }
 }
 
+@media all and (max-width: 1400px) {
+    .videos .video-6,
+    .videos .video-7 {
+        display: none;
+    }
+}
+
 .layout .ranks {
     width: 288px;
     height: 490px;
