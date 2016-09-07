@@ -28,9 +28,14 @@ export default class extends think.model.base {
         }
 
         // 收集所有的 anchor id，然后再恢复上去
-        let anchors = await this.model('anchor')
-            .where({uid: _.uniq(anchorIds)})
-            .select();
+        // XXX(all) 好像如果 x_anchorIds 为空的时候，会出现 `SELECT * FROM `think_anchor` WHERE (  )` 错误 SQL
+        let x_anchorIds = _.uniq(anchorIds);
+        let anchors = [];
+        if (x_anchorIds.length) {
+            anchors = await this.model('anchor')
+                .where({uid: x_anchorIds})
+                .select();
+        }
         let anchorMap = _.keyBy(anchors, 'uid');
 
         // 查一下 Ranks 的信息
